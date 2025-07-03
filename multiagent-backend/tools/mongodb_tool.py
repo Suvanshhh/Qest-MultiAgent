@@ -2,6 +2,7 @@ from crewai.tools import BaseTool
 from pymongo import MongoClient
 from pydantic import BaseModel, Field, PrivateAttr
 from typing import Type, Dict, Any
+import os
 
 # MongoDB URI string (replace with your actual URI)
 MONGO_URI ="mongodb+srv://Suvanshh:bB632221010@cluster0.pkiya.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
