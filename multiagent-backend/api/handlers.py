@@ -7,7 +7,9 @@ from agents.dashboard_agent import DashboardAgent
 
 router = APIRouter()
 
-mongo_tool = MongoDBTool("mongodb://localhost:27017", "mydb")
+MONGO_URI = "mongodb+srv://Suvanshh:bB632221010@cluster0.pkiya.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+DB_NAME = "mydb"
+
 create_order_tool = CreateOrderTool()
 create_client_tool = CreateClientTool()
 
