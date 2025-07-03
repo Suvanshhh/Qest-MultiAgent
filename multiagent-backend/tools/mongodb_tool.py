@@ -3,6 +3,10 @@ from pymongo import MongoClient
 from pydantic import BaseModel, Field, PrivateAttr
 from typing import Type, Dict, Any
 
+# MongoDB URI string (replace with your actual URI)
+MONGO_URI ="mongodb+srv://Suvanshh:bB632221010@cluster0.pkiya.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+DB_NAME = "mydb"  # Replace with your actual database name
+
 class FindInput(BaseModel):
     collection: str = Field(..., description="MongoDB collection name")
     query: Dict[str, Any] = Field(..., description="MongoDB query")
@@ -15,7 +19,7 @@ class MongoDBTool(BaseTool):
     _client: MongoClient = PrivateAttr()
     _db: Any = PrivateAttr()
 
-    def __init__(self, uri: str, db_name: str):
+    def __init__(self, uri: str = MONGO_URI, db_name: str = DB_NAME):
         super().__init__()
         object.__setattr__(self, "_client", MongoClient(uri))
         object.__setattr__(self, "_db", self._client[db_name])
