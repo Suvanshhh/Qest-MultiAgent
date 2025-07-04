@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_BASE = "https://qest-multiagent-production.up.railway.app/";
+const API_BASE = "https://qest-multiagent-production.up.railway.app";
 
 // Info Card Renderers
 function ClientCard({ client }) {
